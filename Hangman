@@ -29,6 +29,7 @@ for i in range(1, 11):
     elif len(let) > 1:
         if let == word:
             print('Поздравляю!')
+            break
         else:
             attempt -= 1
             print(f'У вас осталось {attempt} попыток')
@@ -45,5 +46,11 @@ for i in range(1, 11):
     else:
         print('Такой буквы нет!')
     attempt -= 1
+    if i == 5:
+        print('Хотите получить подсказку?')
+        print('Если согласны напишите "да", если не согласны напишите "нет"')
+        help = input().islower()
+        if help:
+            print(dictionary[word])
                 
 
