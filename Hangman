@@ -35,20 +35,19 @@ while attempt != 0 and '_' in p_word:
     print('Загадонное слова:', *p_word)
     print(f'Введите букву или слово. У вас осталось {attempt} попыток')
     let = input().lower()
-    if len(let) == 1 and let not in let_was:
-        let_was.append(let)
+    if let in let_was:
+        print('Буква уже была. Введите другую букву')
+        let = input()
+        let_was.append(let) 
+    elif len(let) == 1:
+        let_was.append(let)    
     elif len(let) > 1:
         if let == word:
             print('Поздравляю! Ваш приз:')
             break
         else:
-            attempt -= 1
-            print('Вы не угадали!')
-            continue 
-    elif let in let_was:
-        print('Буква уже была. Введите другую букву')
-        let = input()
-        let_was.append(let)
+            attempt = 0
+            break    
     if let in word:
         for j in range(len(word)):
             if word[j] == let:
@@ -59,16 +58,16 @@ while attempt != 0 and '_' in p_word:
         attempt -= 1
     if 5 == attempt and n == 1:
         print('Хотите получить подсказку?')
-        print('Если согласны напишите "да", если не согласны напишите ничего')
+        print('Если согласны напишите "да", если не согласны ничего не пишите')
         help = input().islower()
         n -= 1
         if help:
             print(dictionary[word])
-
+print('Загадонное слова:', *word)
 if attempt == 0:
     print('Вы проиграли!')
     for i in d:
-        print(i)    
+        print(i)  
 else:
     print('Поздравляю! Ваш приз:')
     for i in p:
