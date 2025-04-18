@@ -25,7 +25,7 @@ p = [" ____V____ ",
      " |___|___|",
      " |   |   |",
      " |___|___|"]
-while attempt != 0 or '_' in p_word:
+while attempt != 0 and '_' in p_word:
     print('Загадонное слова:', *p_word)
     print(f'Введите букву или слово. У вас осталось {attempt} попыток')
     let = input().lower()
@@ -38,7 +38,6 @@ while attempt != 0 or '_' in p_word:
         else:
             attempt -= 1
             print('Вы не угадали!')
-            print(f'У вас осталось {attempt} попыток')
             continue 
     elif let in let_was:
         print('Буква уже была. Введите другую букву')
@@ -58,9 +57,11 @@ while attempt != 0 or '_' in p_word:
         help = input().islower()
         if help:
             print(dictionary[word])
+
 if attempt == 0:
     print('Вы проиграли!')
 else:
+    print('Поздравляю! Ваш приз:')
     for i in p:
-        print(i)    
+        print(i)
     
