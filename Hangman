@@ -20,6 +20,7 @@ word = s.pop()
 p_word = ['_' for i in range(len(word))]
 let_was = []
 attempt = 10
+n = 1
 p = [" ____V____ ",                                       
      " |   |   |",
      " |___|___|",
@@ -56,10 +57,11 @@ while attempt != 0 and '_' in p_word:
     else:
         print('Такой буквы нет!')
         attempt -= 1
-    if 5 == attempt:
+    if 5 == attempt and n == 1:
         print('Хотите получить подсказку?')
         print('Если согласны напишите "да", если не согласны напишите ничего')
         help = input().islower()
+        n -= 1
         if help:
             print(dictionary[word])
 
