@@ -1,1 +1,2 @@
-# Hangman
+Hangman
+This is a world-famous game. The rules are very simple. You are shown the number of letters in a word using dashes, and you need to guess the word itself. You have only 10 attempts, if the letter is not in the word, then an attempt is deducted from you. On the contrary, if the letter is in the word, then after it will be displayed instead of dashes. Also on the 5th attempt you will be offered a hint, if you want to get it, write yes, if you do not want to simplify the task, do not write anything. It is also possible to guess the whole word at once, but if it is incorrect, an attempt is deducted.
